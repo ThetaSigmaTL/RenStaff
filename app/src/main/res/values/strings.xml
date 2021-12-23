@@ -1,0 +1,26 @@
+<resources>
+    <string name="label">RenStaff</string>
+    <string name="Bonus">Премия:</string>
+    <string name="textview">2222</string>
+    <string name="app_name">RenStaff</string>
+    <string name="labelKPI">Показатели</string>
+    <string name="creditAmount">Количество кредитов:</string>
+    <string name="total">Сумма:</string>
+    <string name="totalWithIns">Сумма с ФЗ:</string>
+    <string name="SMS">СМС:</string>
+    <string name="rating">Рейтинг</string>
+    <string name="IndInvest">ИИС:</string>
+    <string name="DateChanger">ГГ:</string>
+    <string name="creditStory">ИЗ:</string>
+    <string name="Broker">БС:</string>
+    <string name="privateLawyer">ЛА:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_bonus">Премия:</string>
+    <string name="settings">Settings</string>
+    <string name="bonus_label">Премия:</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
