@@ -30,27 +30,6 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //sssd
-//      textField =(TextView) findViewById(R.id.trainView);
-//        registerForContextMenu(textField);
-
-
     }
-
-//    @Override
-//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-//        switch (v.getId()){
-//            case R.id.trainView:
-//                menu.add(0, MENU_COLOR_RED, 0,"Red");
-//                menu.add(0, MENU_COLOR_GREEN, 0, "Green");
-//                menu.add(0, MENU_COLOR_BLUE, 0, "Blue");
-//                break;
-//
-//        }
-//        super.onCreateContextMenu(menu, v, menuInfo);
-//    }
-
-
-
 }
 
