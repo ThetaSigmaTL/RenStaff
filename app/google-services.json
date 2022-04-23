@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "31116314903",
+    "project_id": "renstaff-6e272",
+    "storage_bucket": "renstaff-6e272.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31116314903:android:4610fb4d705732245c0f52",
+        "android_client_info": {
+          "package_name": "com.example.renstaff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31116314903-kfootjpm63r4lnpbn1erpo1bbma287rf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7kPJvRgQZhcbSW_Qt2bnLIB8684OnyxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31116314903-kfootjpm63r4lnpbn1erpo1bbma287rf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

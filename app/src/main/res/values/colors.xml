@@ -2,9 +2,9 @@
 <resources>
     <color name="mainColor">#F2F5F4</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="teal_200">#D51668</color>
     <color name="purple_500">#fff</color>
-    <color name="tiles_1">#868B91</color>
+    <color name="grey">#868B91</color>
     <color name="RenGreen">#0DA88A</color>
 </resources>
