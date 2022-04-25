@@ -1,59 +1,91 @@
 package com.example.renstaff;
 
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
-
-import android.graphics.Color;
-import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
-import android.view.ActionMode;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TableLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-import androidx.viewpager.widget.PagerAdapter;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.renstaff.databinding.MainMenuFragmentBinding;
 import com.example.renstaff.ui.MainFragment;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity{
-    TextView textField;
-    Button cancelButton;
-    Button okButton;
-    final int MENU_COLOR_RED = 1;
-    final int MENU_COLOR_GREEN = 2;
-    final int MENU_COLOR_BLUE = 3;
+public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener {
+
 
     private ViewPager2 viewPager;
     private TabLayout tabLayout;
 
-    private MainFragment mainFragment;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        viewPager = findViewById(R.id.viewPager);
+        tabLayout = findViewById(R.id.tab_layout);
 
-        viewPager.findViewById(R.id.pager);
-        tabLayout.findViewById(R.id.tab_layout);
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentAdapter fragmentAdapter = new FragmentAdapter(manager, getLifecycle());
 
-        mainFragment = new MainFragment();
+        viewPager.setAdapter(fragmentAdapter);
+        tabLayout.addOnTabSelectedListener(this);
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
+            }
+        });
     }
 
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        viewPager.setCurrentItem(tab.getPosition());
+    }
 
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
 
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+
+    }
+
+    private class FragmentAdapter extends FragmentStateAdapter {
+
+        public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+            super(fragmentManager, lifecycle);
+        }
+
+        @NonNull
+        @Override
+        public Fragment createFragment(int position) {
+            switch (position) {
+                case 0:
+                    return new MainFragment();
+                case 1:
+                    return new CalculatorFragment();
+                case 2:
+                    return new ArchiveFragment();
+                case 3:
+                    return new StatsFragment();
+            }
+            return new MainFragment();
+        }
+
+        @Override
+        public int getItemCount() {
+            return tabLayout.getTabCount();
+        }
+    }
 }
 

@@ -1,55 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_menu_fragment"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainFragment">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/tab_backplate"
-            app:tabMode="scrollable"
-            app:tabSelectedTextColor="@color/teal_200">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Главная" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Калькулятор" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Архив" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Общие" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="" />
-
-
-        </com.google.android.material.tabs.TabLayout>
 
         <Space
             android:layout_width="match_parent"
@@ -74,12 +37,15 @@
                     android:layout_height="wrap_content"
                     android:text="@string/bonus_label"
                     />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="30000" />
+                    android:text="@string/bonus_Sum"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -105,11 +71,11 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textViewLabelIl"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Показатели IL" />
+                    android:text="@string/label_kpi_il"/>
 
                 <Space
                     android:layout_width="match_parent"
@@ -154,8 +120,12 @@
                     android:layout_weight="1"
                     android:gravity="right"
                     android:layout_gravity="right"
+                    android:text="@string/label_credit_amount" />
 
-                    android:text="Количество КД:" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"
+                    />
 
                 <TextView
                     android:id="@+id/textView4"
@@ -163,7 +133,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="" />
+                    android:text="@string/credit_amount_counter" />
             </LinearLayout>
             <Space
                 android:layout_width="match_parent"
@@ -180,15 +150,18 @@
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/label_total_no_insurance" />
+
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/sum_no_insurance" />
             </LinearLayout>
             <Space
                 android:layout_width="match_parent"
@@ -205,15 +178,16 @@
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
-
+                    android:text="@string/label_total_with_insurance" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/sum_with_insurance" />
             </LinearLayout>
             <Space
                 android:layout_width="match_parent"
@@ -241,29 +215,52 @@
                     android:id="@+id/textView18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/label_SMS" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/sms_counter" />
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/label_private_lawyer" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/private_lawyer_counter"/>
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/textView172"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_date_changer" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/textView183"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/date_changer_counter" />
             </LinearLayout>
             <Space
                 android:layout_width="match_parent"
@@ -282,29 +279,52 @@
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/label_credit_story" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/credit_story_counter" />
+                <Space
+                    android:layout_width="102dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/label_ind_invest" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:id="@+id/textView19"
+                    android:id="@+id/textView193"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/ind_invest_counter" />
+                <Space
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/textView201"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_broker" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/textView192"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/broker_counter" />
             </LinearLayout>
             <Space
                 android:layout_width="0dp"
