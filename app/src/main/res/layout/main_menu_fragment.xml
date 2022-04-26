@@ -357,7 +357,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Показатели GP"
+                    android:text="@string/label_kpi_gp"
                     android:gravity="center"/>
             </LinearLayout>
             <Space
@@ -387,17 +387,73 @@
                     android:id="@+id/textView31"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Сумма КД:" />
+                    android:text="@string/label_gp_credit_amount" />
 
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gp_credit_counter"/>
+                <Space
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="10dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="1dp"/>
+                <TextView
+                    android:id="@+id/textView320"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_gp_total_no_insurance" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gp_sum_no_insurance"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="1dp"/>
                 <TextView
                     android:id="@+id/textView30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Сумма С СП:" />
-
+                    android:text="@string/label_gp_total_with_insurance" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gp_sum_with_insurance"/>
             </LinearLayout>
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="10dp"/>
@@ -414,43 +470,54 @@
                     android:id="@+id/textView37"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Пакеты опций" />
+                    android:text="@string/label_option_pack" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView36"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="1" />
+                    android:text="@string/gp_options_pack_counter"/>
+                <Space
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView35"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="СМС:" />
+                    android:text="@string/label_gp_sms" />
+
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView34"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="1" />
+                    android:text="@string/gp_sms_counter" />
+
+                <Space
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView33"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="ФП:" />
+                    android:text="@string/label_financial_help" />
+                <Space
+                    android:layout_width="4dp"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/textView32"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="1" />
+                    android:text="@string/financial_help_counter" />
 
             </LinearLayout>
             <Space
