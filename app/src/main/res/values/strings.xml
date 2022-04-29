@@ -22,6 +22,19 @@
     <string name="credit_story_counter">0</string>
     <string name="label_broker">БС:</string>
     <string name="broker_counter">0</string>
+    <string name="label_kpi_gp">Показатели GP</string>
+    <string name="label_gp_credit_amount">Количество кредитов:</string>
+    <string name="gp_credit_counter">0</string>
+    <string name="label_gp_total_no_insurance">Сумма без СП:</string>
+    <string name="gp_sum_no_insurance">1000000</string>
+    <string name="label_gp_total_with_insurance">Сумма с СП:</string>
+    <string name="gp_sum_with_insurance">100000</string>
+    <string name="label_option_pack">Пакеты опций:</string>
+    <string name="gp_options_pack_counter">0</string>
+    <string name="label_gp_sms">СМС:</string>
+    <string name="gp_sms_counter">0</string>
+    <string name="label_financial_help">ФП:</string>
+    <string name="financial_help_counter">0</string>
     <string name="label_private_lawyer">ЛА:</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
