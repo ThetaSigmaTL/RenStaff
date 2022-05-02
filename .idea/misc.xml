@@ -10,6 +10,8 @@
         <entry key="app/src/main/res/drawable/button_color_click.xml" value="0.20592105263157895" />
         <entry key="app/src/main/res/drawable/ic_add_on_click.xml" value="0.236" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_circle_down_24.xml" value="0.2955" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_circle_up_24.xml" value="0.2955" />
         <entry key="app/src/main/res/drawable/ic_baseline_bar_chart_24.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_baseline_content_copy.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_baseline_content_cut.xml" value="0.3260416666666667" />
@@ -21,15 +23,17 @@
         <entry key="app/src/main/res/drawable/ic_round_book_24.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/platestyle.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/drawable/shape.xml" value="0.2955" />
         <entry key="app/src/main/res/drawable/tab_backplate.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/drawable/toggle_button_color.xml" value="0.2955" />
         <entry key="app/src/main/res/layout-v23/activity_main.xml" value="0.3104384338104911" />
         <entry key="app/src/main/res/layout/activity_calculator.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.43386193819315744" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.4253563390847712" />
         <entry key="app/src/main/res/layout/fragment_archive.xml" value="0.2543822146216332" />
-        <entry key="app/src/main/res/layout/fragment_authentication.xml" value="0.3852644078871783" />
+        <entry key="app/src/main/res/layout/fragment_authentication.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.1188542112013681" />
-        <entry key="app/src/main/res/layout/fragment_calculator.xml" value="0.4305943806966146" />
+        <entry key="app/src/main/res/layout/fragment_calculator.xml" value="0.4283416748046875" />
         <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.3902708864966332" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2543822146216332" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2543822146216332" />
@@ -57,7 +61,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.3877744279187069" />
+        <option name="scale" value="0.40905609130859377" />
       </ProjectState>
     </option>
   </component>
