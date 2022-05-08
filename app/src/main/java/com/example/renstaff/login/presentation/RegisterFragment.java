@@ -1,5 +1,6 @@
 package com.example.renstaff.login.presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.renstaff.NavigationBottomActivity;
 import com.example.renstaff.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -36,6 +38,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private int minPasswordLength;
     private String emptyField = "Поле не может быть пустым.";
+    private Intent intent;
 
 
     @Override
@@ -69,7 +72,8 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(getContext(), "User created", Toast.LENGTH_SHORT).show();
+                                startActivity(intent);
+                                getActivity().finish();
                             } else {
                                 Toast.makeText(getContext(), "User are not created", Toast.LENGTH_SHORT).show();
                             }
@@ -98,6 +102,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         nicknameTextInputLayout = view.findViewById(R.id.nicknameTextInputLayout);
         nicknameEditText = view.findViewById(R.id.nicknameEditText);
         mAuth = FirebaseAuth.getInstance();
+        intent = new Intent(getContext(), NavigationBottomActivity.class);
     }
 
     private boolean checkEditTexts() {
