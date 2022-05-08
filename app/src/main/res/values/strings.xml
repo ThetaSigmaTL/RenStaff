@@ -43,6 +43,8 @@
     <string name="bonus_label">Премия:</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_friends">Friends</string>
+    <string name="title_Settings">Settings</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_activity_navigation_bottom">NavigationBottomActivity</string>
 </resources>
