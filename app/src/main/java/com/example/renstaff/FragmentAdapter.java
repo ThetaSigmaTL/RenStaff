@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.renstaff.ui.MainFragment;
+import com.example.renstaff.ui.calculator.CalculatorFragment;
 
 public class FragmentAdapter extends FragmentStateAdapter {
 
