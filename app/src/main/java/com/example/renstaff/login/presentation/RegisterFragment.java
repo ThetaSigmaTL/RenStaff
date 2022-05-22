@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.renstaff.NavigationBottomActivity;
+import com.example.renstaff.MainActivity;
 import com.example.renstaff.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -102,7 +102,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         nicknameTextInputLayout = view.findViewById(R.id.nicknameTextInputLayout);
         nicknameEditText = view.findViewById(R.id.nicknameEditText);
         mAuth = FirebaseAuth.getInstance();
-        intent = new Intent(getContext(), NavigationBottomActivity.class);
+        intent = new Intent(getContext(), MainActivity.class);
     }
 
     private boolean checkEditTexts() {
