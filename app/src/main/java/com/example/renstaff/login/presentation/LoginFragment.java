@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.renstaff.MainActivity;
-import com.example.renstaff.NavigationBottomActivity;
 import com.example.renstaff.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -47,7 +46,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         forgotPasswordButton.setOnClickListener(this);
         emailListener();
         passwordListener();
-
         return view;
     }
 
@@ -151,6 +149,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         loginButton = view.findViewById(R.id.loginButton);
         registerFragment = new RegisterFragment();
         mAuth = FirebaseAuth.getInstance();
-        intent = new Intent(getContext(), NavigationBottomActivity.class);
+        intent = new Intent(getContext(), MainActivity.class);
     }
 }

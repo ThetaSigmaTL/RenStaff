@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_menu_fragment"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,42 +12,76 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_backplate"
+            app:tabMode="auto"
+            app:tabSelectedTextColor="@color/teal_200">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Главная" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Калькулятор" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Архив" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Общие" />
+        </com.google.android.material.tabs.TabLayout>
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            />
+            android:layout_height="25dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="156dp"
                 android:layout_height="52dp"
-                android:gravity="center"
                 android:background="@drawable/backplate"
+                android:gravity="center"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
                     android:text="@string/bonus_label"
-                    />
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
                 <Space
                     android:layout_width="4dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
+
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:text="@string/bonus_Sum"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:text="@string/bonus_Sum"/>
+                    android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="25dp" />
@@ -568,6 +602,10 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+        </androidx.viewpager2.widget.ViewPager2>
+
     </LinearLayout>
-</FrameLayout>
+
+</LinearLayout>
