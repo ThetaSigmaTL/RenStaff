@@ -1,4 +1,4 @@
-package com.example.renstaff.login.presentation;
+package com.example.renstaff.presentation;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.renstaff.MainActivity;
 import com.example.renstaff.R;
+import com.example.renstaff.presentation.RegisterFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;

@@ -35,14 +35,6 @@ public class SettingsFragment extends Fragment {
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textProfile;
-        settingsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-
         mAuth = FirebaseAuth.getInstance();
         signOut = root.findViewById(R.id.signOut);
         intent = new Intent(getContext(), LoginActivity.class);
@@ -62,5 +54,15 @@ public class SettingsFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void onClickChooseImage() {
+
+    }
+
+    private void getImage() {
+        Intent intentChooser = new Intent();
+        intentChooser.setType("image/");
+        intentChooser.setAction(Intent.ACTION_GET_CONTENT);
     }
 }

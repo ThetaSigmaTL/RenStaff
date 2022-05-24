@@ -1,4 +1,4 @@
-package com.example.renstaff.login.presentation;
+package com.example.renstaff.presentation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +23,9 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 
@@ -67,6 +70,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             case R.id.registerButton:
                 clearFocus();
                 if (checkEditTexts()) {
+                    addDataToFirestore();
                     mAuth.createUserWithEmailAndPassword(emailEditText.getText().toString(),
                             passwordEditText.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -79,10 +83,8 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                             }
                         }
                     });
-                    Toast.makeText(getContext(), "Confirmed", Toast.LENGTH_SHORT).show();
                 } else {
-
-                    Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();
+                    Log.d("RegistrationButton", "Error");
                 }
                 break;
         }
@@ -110,7 +112,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             nicknameTextInputLayout.setError(emptyField);
             return false;
         } else if (!nicknamePattern()) {
-            nicknameTextInputLayout.setError("Никнейм не может содержать пробелы.");
+            nicknameTextInputLayout.setError("Nickname не может содержать пробелы.");
             return false;
         } else if (emailEditText.getText().toString().isEmpty()) {
             emailTextInputLayout.setError(emptyField);
@@ -241,6 +243,18 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             return false;
         }
         return true;
+    }
+
+    private void addDataToFirestore() {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("Nickname", nicknameEditText.getText().toString());
+        data.put("Email", emailEditText.getText().toString());
+        database.collection("users").add(data).addOnSuccessListener(documentReference -> {
+            Log.d("FirestoreD", "Completed");
+        }).addOnFailureListener(exception -> {
+            Toast.makeText(getContext(), exception.getMessage(), Toast.LENGTH_SHORT).show();
+        });
     }
 
 }
