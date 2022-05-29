@@ -14,7 +14,7 @@
         tools:layout="@layout/fragment_chat" />
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.renstaff.ui.MainFragment"
+        android:name="com.example.renstaff.ui.TabLayoutFragment"
         android:label="main_menu_fragment"
-        tools:layout="@layout/main_menu_fragment" />
+        tools:layout="@layout/tab_layout_fragment" />
 </navigation>

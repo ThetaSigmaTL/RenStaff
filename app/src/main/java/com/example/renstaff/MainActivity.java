@@ -1,14 +1,18 @@
 package com.example.renstaff;
 
+import android.content.Intent;
 import android.os.Bundle;
-
+import android.support.v4.app.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.renstaff.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity{
 
