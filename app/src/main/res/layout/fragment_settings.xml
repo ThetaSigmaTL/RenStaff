@@ -22,14 +22,14 @@
         android:layout_height="150dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_baseline_account_circle_24"/>
+        android:src="@drawable/ic_avatar_svgrepo_com"/>
 
     <TextView
         android:id="@+id/nameAndLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Name Last name"
+        android:text="Name Lastname"
         android:textColor="@color/black"
         android:gravity="center"
         android:textSize="20sp"/>

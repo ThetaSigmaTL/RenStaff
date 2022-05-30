@@ -112,6 +112,11 @@ public class ChatFragment extends Fragment  implements ChatListener {
             binding.conversationsRecyclerView.smoothScrollToPosition(0);
             binding.conversationsRecyclerView.setVisibility(View.VISIBLE);
             binding.progressBar.setVisibility(View.GONE);
+            if (messageModels.size() > 0) {
+                binding.haventChat.setVisibility(View.GONE);
+            } else {
+                binding.haventChat.setVisibility(View.VISIBLE);
+            }
 
         }
     };

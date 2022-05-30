@@ -10,14 +10,15 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_baseline_account_circle_24"
+        android:src="@drawable/ic_avatar_svgrepo_com"
         layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp">
 
         <TextView
             android:id="@+id/nameLastNameTextView"
