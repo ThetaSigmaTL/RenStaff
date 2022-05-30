@@ -7,19 +7,51 @@
     android:orientation="vertical"
     tools:context=".ui.settings.SettingsFragment">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/avatarImageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="80dp"
-        android:layout_gravity="top|center"
-        android:src="@drawable/ic_baseline_account_circle_24"/>
-
     <Button
         android:id="@+id/signOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
         android:text="Log out"
-        android:layout_gravity="center" />
+        android:layout_gravity="right" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatarImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_baseline_account_circle_24"/>
+
+    <TextView
+        android:id="@+id/nameAndLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Name Last name"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="left"
+        android:text="Email"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="18dp"/>
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="reagentoj@gmail.com"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="18sp"/>
+
+
 </LinearLayout>

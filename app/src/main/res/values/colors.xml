@@ -9,6 +9,7 @@
     <color name="RenGreen">#0DA88A</color>
     <color name="tiles_1">#f5f5f5</color>
     <color name="RenGreenButton">#98bb69</color>
-    <color name="MessageGreen">#AED57A</color>
+    <color name="sentMessageGreen">#AED57A</color>
+    <color name="recievedMessageGreen">#C9F88A</color>
     <color name="redError">#E10000</color>
 </resources>
