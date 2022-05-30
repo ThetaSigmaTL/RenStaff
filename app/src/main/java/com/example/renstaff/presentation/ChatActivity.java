@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import com.example.renstaff.MainActivity;
 import com.example.renstaff.data.utilities.Constants;
 import com.example.renstaff.data.utilities.PreferenceManager;
 import com.example.renstaff.databinding.ActivityChatBinding;
@@ -24,8 +26,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends MainActivity {
 
     private ActivityChatBinding binding;
     private UserModel receiverUserModel;
@@ -34,6 +37,7 @@ public class ChatActivity extends AppCompatActivity {
     private PreferenceManager preferenceManager;
     private FirebaseFirestore database;
     private String conversionId = null;
+    private Boolean isReceiverOnline = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,12 @@ public class ChatActivity extends AppCompatActivity {
         loadReceiverDetails();
         init();
         listenMessages();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listenReceiverStatus();
     }
 
     private void clickListeners() {
@@ -93,6 +103,27 @@ public class ChatActivity extends AppCompatActivity {
             addConversion(conversion);
         }
         binding.inputMessage.setText(null);
+    }
+
+    private void listenReceiverStatus() {
+        database.collection(Constants.KEY_COLLECTION_USERS).document(receiverUserModel.id)
+                .addSnapshotListener(ChatActivity.this, (value, error) -> {
+                    if (error != null) {
+                        return;
+                    }
+                    if (value != null) {
+                        if (value.getLong(Constants.KEY_STATUS) != null) {
+                            int status = Objects.requireNonNull(
+                                    value.getLong(Constants.KEY_STATUS)).intValue();
+                                    isReceiverOnline = status == 1;
+                        }
+                    }
+                    if (isReceiverOnline) {
+                        binding.statusTextView.setVisibility(View.VISIBLE);
+                    } else {
+                        binding.statusTextView.setVisibility(View.GONE);
+                    }
+                });
     }
 
     private void listenMessages() {
