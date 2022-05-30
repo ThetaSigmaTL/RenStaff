@@ -1,28 +1,42 @@
 package com.example.renstaff;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.ListFragment;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.renstaff.ui.MainFragment;
+import com.example.renstaff.ArchiveFragment;
+import com.example.renstaff.StatsFragment;
+import com.example.renstaff.ui.TabLayoutFragment;
 import com.example.renstaff.ui.calculator.CalculatorFragment;
 
-public class FragmentAdapter extends FragmentStateAdapter {
+import java.util.List;
 
-    public FragmentAdapter(@NonNull FragmentActivity fragmentActivity) {
-        super(fragmentActivity);
+public class FragmentAdapter extends FragmentPagerAdapter {
+
+    private final String [] tabTitles = new String[]{"Главная","Калькулятор","Архив","Общие"};
+
+    public FragmentAdapter(@NonNull FragmentManager fm) {
+        super(fm);
     }
 
-    public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
-        super(fragmentManager, lifecycle);
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return tabTitles[position];
     }
+
+
 
     @NonNull
     @Override
-    public Fragment createFragment(int position) {
+    public Fragment getItem(int position) {
         switch (position){
             case 0:
                 return new MainFragment();
@@ -32,12 +46,18 @@ public class FragmentAdapter extends FragmentStateAdapter {
                 return new ArchiveFragment();
             case 3:
                 return new StatsFragment();
+            default: return null;
         }
-        return new MainFragment();
+
     }
 
     @Override
-    public int getItemCount() {
-        return 0;
+    public int getCount() {
+        return 4;
     }
 }
+
+
+
+
+
