@@ -1,6 +1,5 @@
 package com.example.renstaff.ui.chat;
 
-import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -9,13 +8,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.renstaff.R;
 import com.example.renstaff.data.utilities.Constants;
 import com.example.renstaff.data.utilities.PreferenceManager;
 import com.example.renstaff.databinding.FragmentChatBinding;
@@ -47,6 +45,7 @@ public class ChatFragment extends Fragment  implements ChatListener {
     private RecentConversationAdapter conversationAdapter;
     private FirebaseFirestore database;
     private PreferenceManager preferenceManager;
+    private Fragment fragment;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

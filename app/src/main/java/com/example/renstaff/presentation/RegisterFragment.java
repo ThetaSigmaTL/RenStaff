@@ -104,7 +104,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                                     loading(false);
                                     Toast.makeText(getContext(), exception.getMessage(), Toast.LENGTH_SHORT).show();
                                 });
-
                                 loading(false);
                                 startActivity(intent);
                                 getActivity().finish();

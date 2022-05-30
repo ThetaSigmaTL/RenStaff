@@ -13,25 +13,21 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.renstaff.data.utilities.Constants;
 import com.example.renstaff.data.utilities.PreferenceManager;
 import com.example.renstaff.databinding.ActivityMainBinding;
+import com.example.renstaff.presentation.BaseActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends BaseActivity {
 
     ActivityMainBinding activityMainBinding;
-    private DocumentReference documentReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(activityMainBinding.getRoot());
-        PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        documentReference = db.collection(Constants.KEY_COLLECTION_USERS)
-                .document(preferenceManager.getString(Constants.KEY_USER_ID));
 
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -42,16 +38,5 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        documentReference.update(Constants.KEY_STATUS, 0);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        documentReference.update(Constants.KEY_STATUS, 1);
-    }
 }
 

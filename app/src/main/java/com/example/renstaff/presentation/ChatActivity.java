@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
-public class ChatActivity extends MainActivity {
+public class ChatActivity extends BaseActivity {
 
     private ActivityChatBinding binding;
     private UserModel receiverUserModel;
