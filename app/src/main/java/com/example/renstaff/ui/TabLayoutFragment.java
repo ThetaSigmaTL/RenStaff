@@ -1,30 +1,21 @@
 package com.example.renstaff.ui;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
-
-import com.example.renstaff.databinding.TabLayoutFragmentBinding;
 import com.example.renstaff.FragmentAdapter;
 import com.example.renstaff.R;
 import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
 public class TabLayoutFragment extends Fragment {
 
     TabLayout tabLayout;
     ViewPager viewPager;
-
     FragmentAdapter fragmentAdapter;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,14 +23,10 @@ public class TabLayoutFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.tab_layout_fragment, container, false);
         tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
-
         viewPager = (ViewPager) view.findViewById(R.id.pager);
         fragmentAdapter = new FragmentAdapter(getFragmentManager());
-
-
         viewPager.setAdapter(fragmentAdapter);
         tabLayout.setupWithViewPager(viewPager);
-
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

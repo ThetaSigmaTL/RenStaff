@@ -47,4 +47,19 @@
     <string name="title_Settings">Settings</string>
     <string name="title_chat">Chat</string>
     <string name="title_activity_navigation_bottom">NavigationBottomActivity</string>
+    <string-array name="services_il">
+        <item>ФЗ</item>
+        <item>ЛА</item>
+        <item>ИЗ</item>
+        <item>ГГ</item>
+        <item>СМС</item>
+    </string-array>
+    <string-array name="services_gp">
+        <item>ВС</item>
+        <item>PRO</item>
+        <item>СМС</item>
+        <item>УК</item>
+        <item>ППл</item>
+        <item>ПП</item>
+    </string-array>
 </resources>

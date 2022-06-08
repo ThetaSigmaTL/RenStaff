@@ -18,7 +18,7 @@ import com.example.renstaff.ui.calculator.CalculatorFragment;
 
 import java.util.List;
 
-public class FragmentAdapter extends FragmentPagerAdapter {
+public class FragmentAdapter extends FragmentStatePagerAdapter {
 
     private final String [] tabTitles = new String[]{"Главная","Калькулятор","Архив","Общие"};
 
@@ -26,13 +26,14 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
-    @Nullable
     @Override
+    public int getCount() {
+        return 4;
+    }
+
     public CharSequence getPageTitle(int position) {
         return tabTitles[position];
     }
-
-
 
     @NonNull
     @Override
@@ -46,14 +47,8 @@ public class FragmentAdapter extends FragmentPagerAdapter {
                 return new ArchiveFragment();
             case 3:
                 return new StatsFragment();
-            default: return null;
+            default: return new MainFragment();
         }
-
-    }
-
-    @Override
-    public int getCount() {
-        return 4;
     }
 }
 

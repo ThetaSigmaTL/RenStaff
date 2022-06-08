@@ -20,5 +20,4 @@ public class LoginActivity extends AppCompatActivity {
                     .replace(R.id.loginFragmentContainer, loginFragment, "LoginFragment")
                     .commit();
     }
-
 }
