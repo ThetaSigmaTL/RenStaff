@@ -31,12 +31,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 
 public class RegisterFragment extends Fragment implements View.OnClickListener {
 
-    // объявление переменных
     private ImageView backButton;
     private Fragment loginFragment;
     private Button registerButton;
@@ -77,45 +77,46 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                 loading(true);
                 clearFocus();
                 if (checkEditTexts()) {
+                    Log.d("registrationTask", "Suc");
                     mAuth.createUserWithEmailAndPassword(emailEditText.getText().toString(),
-                            passwordEditText.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                FirebaseFirestore database = FirebaseFirestore.getInstance();
-                                HashMap<String, Object> user = new HashMap<>();
-                                user.put(Constants.KEY_NAME, nameEditText.getText().toString());
-                                user.put(Constants.KEY_LAST_NAME, lastNameEditText.getText().toString());
-                                user.put(Constants.KEY_EMAIL, emailEditText.getText().toString());
-                                user.put(Constants.KEY_PASSWORD, passwordEditText.getText().toString());
-                                user.put(Constants.KEY_USER_AUTH_ID, mAuth.getCurrentUser().getUid());
-                                database.collection(Constants.KEY_COLLECTION_USERS)
-                                        .add(user)
-                                        .addOnSuccessListener(documentReference -> {
-                                            preferenceManager.putBoolean(Constants.KEY_SIGNED_IN, true);
-                                            preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
-                                            preferenceManager.putString(Constants.KEY_EMAIL, emailEditText.getText().toString());
-                                            preferenceManager.putString(Constants.KEY_NAME, nameEditText.getText().toString());
-                                            preferenceManager.putString(Constants.KEY_LAST_NAME, lastNameEditText.getText().toString());
-                                            getToken();
-                                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                            Log.d("DocRef", documentReference.getId());
-                                        }).addOnFailureListener(exception -> {
+                            passwordEditText.getText().toString()).addOnCompleteListener(task -> {
+                                if (task.isSuccessful()) {
+                                    FirebaseFirestore database = FirebaseFirestore.getInstance();
+                                    HashMap<String, Object> user = new HashMap<>();
+                                    user.put(Constants.KEY_NAME, nameEditText.getText().toString());
+                                    user.put(Constants.KEY_LAST_NAME, lastNameEditText.getText().toString());
+                                    user.put(Constants.KEY_EMAIL, emailEditText.getText().toString());
+                                    user.put(Constants.KEY_PASSWORD, passwordEditText.getText().toString());
+                                    user.put(Constants.KEY_USER_AUTH_ID, mAuth.getCurrentUser().getUid());
+                                    user.put(Constants.KEY_STATUS, 0);
+                                    database.collection(Constants.KEY_COLLECTION_USERS)
+                                            .add(user)
+                                            .addOnSuccessListener(documentReference -> {
+                                                preferenceManager.putBoolean(Constants.KEY_SIGNED_IN, true);
+                                                preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
+                                                preferenceManager.putString(Constants.KEY_EMAIL, emailEditText.getText().toString());
+                                                preferenceManager.putString(Constants.KEY_NAME, nameEditText.getText().toString());
+                                                preferenceManager.putString(Constants.KEY_LAST_NAME, lastNameEditText.getText().toString());
+                                                getToken();
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                Log.d("DocRef", documentReference.getId());
+                                                loading(false);
+                                                requireActivity().finish();
+                                                startActivity(intent);
+                                            }).addOnFailureListener(exception -> {
+                                        loading(false);
+                                        Toast.makeText(getContext(), exception.getMessage(), Toast.LENGTH_SHORT).show();
+                                    });
+                                } else {
                                     loading(false);
-                                    Toast.makeText(getContext(), exception.getMessage(), Toast.LENGTH_SHORT).show();
-                                });
-                                loading(false);
-                                startActivity(intent);
-                                getActivity().finish();
-                            } else {
-                                loading(false);
-                                Toast.makeText(getContext(), "UserModel are not created", Toast.LENGTH_SHORT).show();
-                            }
-                        }
+                                    Toast.makeText(getContext(), "UserModel are not created",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(exception -> {
+                        Toast.makeText(getContext(), exception.getMessage(), Toast.LENGTH_SHORT).show();
                     });
                 } else {
                     loading(false);
-                    Log.d("RegistrationButton", "Error");
                 }
                 break;
         }
@@ -149,7 +150,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         lastNameEditText = view.findViewById(R.id.lastNameEditText);
         mAuth = FirebaseAuth.getInstance();
         intent = new Intent(getContext(), MainActivity.class);
-        preferenceManager = new PreferenceManager(getActivity().getApplicationContext());
+        preferenceManager = new PreferenceManager(requireActivity().getApplicationContext());
     }
 
     // проверка полей
@@ -345,29 +346,30 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    // добавление данных в базу данных Firebase и в SharedPreference
-    private void addDataToFirestore() {
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        HashMap<String, Object> user = new HashMap<>();
-        user.put(Constants.KEY_NAME, nameEditText.getText().toString());
-        user.put(Constants.KEY_LAST_NAME, lastNameEditText.getText().toString());
-        user.put(Constants.KEY_EMAIL, emailEditText.getText().toString());
-        user.put(Constants.KEY_PASSWORD, passwordEditText.getText().toString());
-        user.put(Constants.KEY_USER_AUTH_ID, mAuth.getCurrentUser().getUid());
-        database.collection(Constants.KEY_COLLECTION_USERS)
-                .add(user)
-                .addOnSuccessListener(documentReference -> {
-                    preferenceManager.putBoolean(Constants.KEY_SIGNED_IN, true);
-                    preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
-                    preferenceManager.putString(Constants.KEY_EMAIL, emailEditText.getText().toString());
-                    preferenceManager.putString(Constants.KEY_NAME, nameEditText.getText().toString());
-                    preferenceManager.putString(Constants.KEY_LAST_NAME, lastNameEditText.getText().toString());
-                    Log.d("DocRef", documentReference.getId());
-                }).addOnFailureListener(exception -> {
-            loading(false);
-            Toast.makeText(getContext(), exception.getMessage(), Toast.LENGTH_SHORT).show();
-        });
-    }
+//    // добавление данных в базу данных Firebase и в SharedPreference
+//    private void addDataToFirestore() {
+//        FirebaseFirestore database = FirebaseFirestore.getInstance();
+//        HashMap<String, Object> user = new HashMap<>();
+//        user.put(Constants.KEY_NAME, nameEditText.getText().toString());
+//        user.put(Constants.KEY_LAST_NAME, lastNameEditText.getText().toString());
+//        user.put(Constants.KEY_EMAIL, emailEditText.getText().toString());
+//        user.put(Constants.KEY_PASSWORD, passwordEditText.getText().toString());
+//        user.put(Constants.KEY_USER_AUTH_ID, mAuth.getCurrentUser().getUid());
+//        user.put(Constants.KEY_STATUS, 1);
+//        database.collection(Constants.KEY_COLLECTION_USERS)
+//                .add(user)
+//                .addOnSuccessListener(documentReference -> {
+//                    preferenceManager.putBoolean(Constants.KEY_SIGNED_IN, true);
+//                    preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
+//                    preferenceManager.putString(Constants.KEY_EMAIL, emailEditText.getText().toString());
+//                    preferenceManager.putString(Constants.KEY_NAME, nameEditText.getText().toString());
+//                    preferenceManager.putString(Constants.KEY_LAST_NAME, lastNameEditText.getText().toString());
+//                    Log.d("DocRef", documentReference.getId());
+//                }).addOnFailureListener(exception -> {
+//            loading(false);
+//            Toast.makeText(getContext(), exception.getMessage(), Toast.LENGTH_SHORT).show();
+//        });
+//    }
 
     private void getToken() {
         FirebaseMessaging.getInstance().getToken().addOnSuccessListener(this::updateToken);

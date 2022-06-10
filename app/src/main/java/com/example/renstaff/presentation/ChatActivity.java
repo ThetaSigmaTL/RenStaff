@@ -65,7 +65,9 @@ public class ChatActivity extends BaseActivity {
                 }
             }
         });
-        binding.backButton.setOnClickListener(v -> onBackPressed());
+        binding.backButton.setOnClickListener(v -> {
+            onBackPressed();
+        });
     }
 
     private void loadReceiverDetails() {
@@ -146,20 +148,28 @@ public class ChatActivity extends BaseActivity {
             for (DocumentChange documentChange : value.getDocumentChanges()) {
                if (documentChange.getType() == DocumentChange.Type.ADDED){
                     MessageModel messageModel = new MessageModel();
-                    messageModel.senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
-                    messageModel.receiverId = documentChange.getDocument().getString(Constants.KEY_RECEIVER_ID);
-                    messageModel.message = documentChange.getDocument().getString(Constants.KEY_MESSAGE);
-                    messageModel.dateTime = getDateTime(documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP));
-                    messageModel.dataObject = documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP);
+                    messageModel.senderId = documentChange
+                            .getDocument().getString(Constants.KEY_SENDER_ID);
+                    messageModel.receiverId = documentChange
+                            .getDocument().getString(Constants.KEY_RECEIVER_ID);
+                    messageModel.message = documentChange
+                            .getDocument().getString(Constants.KEY_MESSAGE);
+                    messageModel.dateTime = getDateTime(documentChange
+                            .getDocument().getDate(Constants.KEY_TIMESTAMP));
+                    messageModel.dataObject = documentChange
+                            .getDocument().getDate(Constants.KEY_TIMESTAMP);
                     messageModels.add(messageModel);
                }
             }
-            Collections.sort(messageModels, (obj1, obj2) -> obj1.dataObject.compareTo(obj2.dataObject));
+            messageModels.sort((obj1, obj2) ->
+                    obj1.dataObject.compareTo(obj2.dataObject));
             if (count == 0) {
                 chatAdapter.notifyDataSetChanged();
             } else {
-                chatAdapter.notifyItemRangeChanged(messageModels.size(), messageModels.size());
-                binding.chatRecyclerView.smoothScrollToPosition(messageModels.size() - 1);
+                chatAdapter.notifyItemRangeChanged(messageModels.size()
+                        , messageModels.size());
+                binding.chatRecyclerView.smoothScrollToPosition(
+                        messageModels.size() - 1);
             }
             binding.chatRecyclerView.setVisibility(View.VISIBLE);
         }

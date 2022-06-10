@@ -13,10 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/RenStaff" >
         <activity
-            android:name=".presentation.UsersActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
             android:name=".presentation.ChatActivity"
             android:exported="true" />
         <activity

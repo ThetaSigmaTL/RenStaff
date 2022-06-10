@@ -47,4 +47,6 @@
     <string name="title_Settings">Settings</string>
     <string name="title_chat">Chat</string>
     <string name="title_activity_navigation_bottom">NavigationBottomActivity</string>
+    <string name="renessans">Ренессанс</string>
+    <string name="credit">КРЕДИТ</string>
 </resources>

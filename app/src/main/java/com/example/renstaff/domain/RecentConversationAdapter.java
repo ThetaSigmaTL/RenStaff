@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.renstaff.databinding.ItemUserMessageBinding;
+import com.example.renstaff.databinding.ItemUserChatBinding;
 import com.example.renstaff.domain.listeners.ChatListener;
 import com.example.renstaff.models.MessageModel;
 import com.example.renstaff.models.UserModel;
@@ -28,7 +28,7 @@ public class RecentConversationAdapter extends RecyclerView.Adapter<RecentConver
     @Override
     public ConversionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ConversionViewHolder(
-                ItemUserMessageBinding.inflate(
+                ItemUserChatBinding.inflate(
                         LayoutInflater.from(parent.getContext()),
                         parent, false));
     }
@@ -46,11 +46,11 @@ public class RecentConversationAdapter extends RecyclerView.Adapter<RecentConver
 
     class ConversionViewHolder extends RecyclerView.ViewHolder {
 
-        ItemUserMessageBinding binding;
+        ItemUserChatBinding binding;
 
-        public ConversionViewHolder(ItemUserMessageBinding itemUserMessageBinding) {
-            super(itemUserMessageBinding.getRoot());
-            binding = itemUserMessageBinding;
+        public ConversionViewHolder(ItemUserChatBinding itemUserChatBinding) {
+            super(itemUserChatBinding.getRoot());
+            binding = itemUserChatBinding;
         }
 
         void setData(MessageModel messageModel) {

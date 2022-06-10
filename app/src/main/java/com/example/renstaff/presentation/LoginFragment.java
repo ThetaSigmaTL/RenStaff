@@ -65,7 +65,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         preferenceManager = new PreferenceManager(this.getActivity().getApplicationContext());
         registerNowButton.setOnClickListener(this);
         loginButton.setOnClickListener(this);
-        forgotPasswordButton.setOnClickListener(this);
+//        forgotPasswordButton.setOnClickListener(this);
         emailListener();
         passwordListener();
 
@@ -80,9 +80,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                         .replace(R.id.loginFragmentContainer, registerFragment, "Register Fragment")
                         .commit();
                 break;
-            case R.id.forgotPasswordButton:
-                Toast.makeText(getContext(), "Forgot password", Toast.LENGTH_SHORT).show();
-                break;
+//            case R.id.forgotPasswordButton:
+//                Toast.makeText(getContext(), "Forgot password", Toast.LENGTH_SHORT).show();
+//                break;
             case R.id.loginButton:
                 loading(true);
                 clearFocus();
@@ -111,14 +111,13 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                                                 startActivity(intent);
                                                 loading(false);
                                                 getActivity().finish();
-                                                Log.d("LoginF", preferenceManager.getString(Constants.KEY_USER_ID));
                                             }
                                         });
 
                             } else {
                                 loading(false);
-                                emailTextInputLayout.setError("Проверьте правильность электронной почты.");
-                                passwordTextInputLayout.setError("Проверьте правильность пароля.");
+                                emailTextInputLayout.setError("Неверный логин или пароль.");
+                                passwordTextInputLayout.setError("Неверный логин или пароль.");
                             }
                         }
                     });
@@ -225,7 +224,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         emailEditText = view.findViewById(R.id.emailEditText);
         passwordEditText = view.findViewById(R.id.passwordEditText);
         registerNowButton = view.findViewById(R.id.registerNowButton);
-        forgotPasswordButton = view.findViewById(R.id.forgotPasswordButton);
+//        forgotPasswordButton = view.findViewById(R.id.forgotPasswordButton);
         loginButton = view.findViewById(R.id.loginButton);
         registerFragment = new RegisterFragment();
         mAuth = FirebaseAuth.getInstance();

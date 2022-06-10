@@ -16,7 +16,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private Fragment loginFragment = new LoginFragment();
     FirebaseAuth mAuth;
 
     @Override
@@ -39,38 +38,5 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
             }
         }, 1500);
-
-        Log.d("SplashSc", "onCreate");
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        Log.d("SplashSc", "onStart");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("SplashSc", "onResume");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("SplashSc", "onPause");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d("SplashSc", "onStop");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("SplashSc", "onDestroy");
     }
 }

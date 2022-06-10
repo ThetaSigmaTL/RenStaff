@@ -1,6 +1,7 @@
 package com.example.renstaff.presentation;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,13 +14,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class BaseActivity extends AppCompatActivity {
 
     DocumentReference documentReference;
+    FirebaseFirestore database;
+    PreferenceManager preferenceManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        PreferenceManager preferenceManager = new PreferenceManager(getApplicationContext());
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        documentReference = db.collection(Constants.KEY_COLLECTION_USERS)
+        preferenceManager = new PreferenceManager(getApplicationContext());
+        database = FirebaseFirestore.getInstance();
+        documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
                 .document(preferenceManager.getString(Constants.KEY_USER_ID));
 
     }
@@ -33,6 +36,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d("prefmen", preferenceManager.getString(Constants.KEY_USER_ID));
         documentReference.update(Constants.KEY_STATUS, 1);
     }
 
