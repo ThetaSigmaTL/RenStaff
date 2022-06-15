@@ -1,6 +1,5 @@
 package com.example.renstaff.ui.calculator;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,25 +8,17 @@ import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
 import android.text.InputFilter;
-import android.text.Spanned;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.renstaff.R;
-import com.example.renstaff.helper.FormatValue;
-import com.google.android.material.textfield.TextInputLayout;
-
-import org.w3c.dom.Text;
-
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
+import com.example.renstaff.data.utilities.FormatValue;
 
 
 public class CalculatorFragment extends Fragment {

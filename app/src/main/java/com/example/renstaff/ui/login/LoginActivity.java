@@ -1,12 +1,12 @@
-package com.example.renstaff;
+package com.example.renstaff.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-import com.example.renstaff.presentation.LoginFragment;
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.renstaff.R;
+import com.example.renstaff.ui.login.LoginFragment;
 
 public class LoginActivity extends AppCompatActivity {
 

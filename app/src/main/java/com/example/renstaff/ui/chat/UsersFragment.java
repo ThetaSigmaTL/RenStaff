@@ -1,24 +1,21 @@
-package com.example.renstaff.presentation;
+package com.example.renstaff.ui.chat;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.renstaff.R;
 import com.example.renstaff.data.utilities.Constants;
 import com.example.renstaff.data.utilities.PreferenceManager;
 import com.example.renstaff.databinding.FragmentUsersBinding;
 import com.example.renstaff.domain.UsersAdapter;
 import com.example.renstaff.domain.listeners.UserListener;
 import com.example.renstaff.models.UserModel;
-import com.example.renstaff.ui.chat.ChatFragment;
+import com.example.renstaff.ui.chat.ChatActivity;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".presentation.RegisterFragment">
+    tools:context=".ui.login.RegisterFragment">
 
     <ImageView
         android:id="@+id/backButton"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="42dp"
-        android:text="Welcome to RenStaff!"
+        android:text="Добро пожаловать в RenStaff!"
         android:textColor="@color/black"
         android:textSize="24dp"
         android:textStyle="bold" />

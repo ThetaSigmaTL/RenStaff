@@ -1,9 +1,8 @@
-package com.example.renstaff.presentation;
+package com.example.renstaff.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -20,18 +19,14 @@ import com.example.renstaff.MainActivity;
 import com.example.renstaff.R;
 import com.example.renstaff.data.utilities.Constants;
 import com.example.renstaff.data.utilities.PreferenceManager;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
-import java.util.Objects;
 import java.util.regex.Pattern;
 
 
@@ -137,7 +132,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         backButton = view.findViewById(R.id.backButton);
         loginFragment = new LoginFragment();
         registerButton = view.findViewById(R.id.registerButton);
-        minPasswordLength = 8;
+        minPasswordLength = 12;
         emailEditText = view.findViewById(R.id.emailEditText);
         passwordEditText = view.findViewById(R.id.passwordEditText);
         confirmPasswordEditText = view.findViewById(R.id.confirmPasswordEditText);
@@ -177,7 +172,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             passwordTextInputLayout.setError(emptyField);
             return false;
         } else if (passwordEditText.getText().toString().length() < minPasswordLength) {
-            passwordTextInputLayout.setError("Пароль должен содержать 8 символов.");
+            passwordTextInputLayout.setError("Пароль должен содержать не менее 12 символов.");
             return false;
         } else if (confirmPasswordEditText.getText().toString().isEmpty()) {
             confirmPasswordTextInputLayout.setError(emptyField);
@@ -268,7 +263,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                     if (passwordEditText.getText().toString().isEmpty()) {
                         passwordTextInputLayout.setError(emptyField);
                     } else if (!passwordPattern()) {
-                        passwordTextInputLayout.setError("Пароль должен содержать не менее 8 символов.");
+                        passwordTextInputLayout.setError("Пароль должен содержать не менее 12 символов.");
                     }
                 }
             }
