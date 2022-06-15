@@ -1,0 +1,34 @@
+{
+  "interestRates": [
+    {
+      "Выгодный": 27.9,
+      "Сочный": 34.9,
+      "Классический1": 34.9,
+      "Классическйи2": 32.9,
+      "Классический3": 30.9,
+      "Классический4": 27.9,
+      "Классический5": 25.9
+    }
+  ],
+  "productsIL": [
+    {
+      "insurance": [
+        {
+          "stepOneInsurance": 1.25,
+          "stepTwoInsurance": 1.2,
+          "stepThreeInsurance": 0.85
+        }
+      ],
+      "sms": [
+        {
+          "stepOneSMS": 1299,
+          "stepTwoSMS": 1449,
+          "stepThreeSMS": 1599
+        }
+      ],
+      "lawyer": 1500,
+      "dateChanger": 1150,
+      "creditStory": 900
+    }
+  ]
+}
