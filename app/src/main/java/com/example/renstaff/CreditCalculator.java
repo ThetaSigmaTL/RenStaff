@@ -26,16 +26,15 @@ public class CreditCalculator {
         BigDecimal creditSum;
         BigDecimal servicesSum;
         return null;
-
     }
 
     private HashMap<String, Double> readBankProductsJson()
     {
-
         try {
             Object object = new JSONParser().parse(new FileReader("bank-products.json"));
             JSONObject jo = (JSONObject) object;
-            
+            JSONArray rates  = (JSONArray) jo.get("interestRates");
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
