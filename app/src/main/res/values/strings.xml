@@ -1,7 +1,7 @@
 <resources>
     <string name="label">RenStaff</string>
     <string name="Bonus">Премия:</string>
-    <string name="bonus_Sum">2222</string>
+    <string name="bonus_Sum">22222</string>
     <string name="app_name">RenStaff</string>
     <string name="label_kpi_il">Показатели IL</string>
     <string name="label_credit_amount">Количество кредитов:</string>

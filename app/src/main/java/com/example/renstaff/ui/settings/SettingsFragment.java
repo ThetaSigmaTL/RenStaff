@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import com.example.renstaff.LoginActivity;
+import com.example.renstaff.ui.login.LoginActivity;
 import com.example.renstaff.data.utilities.Constants;
 import com.example.renstaff.data.utilities.PreferenceManager;
 import com.example.renstaff.databinding.FragmentSettingsBinding;
