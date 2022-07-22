@@ -1,17 +1,10 @@
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 
-public class BankProductsRoot {
+public class BankProductsRoot implements Root {
 
-    private String name;
     private List<CreditProduct> productList;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public List<CreditProduct> getProductList() {
         return productList;

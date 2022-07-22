@@ -1,8 +1,17 @@
 public class CreditProduct {
     private String name;
     private double interestRate;
-    private int maxTerm;
-    private int minTerm;
+    private int minTerm, maxTerm;
+
+    public CreditProduct(String name, double interestRate, int minTerm, int maxTerm){
+        this.name = name;
+        if (interestRate < 0) {
+            throw new IllegalArgumentException("Interest rate can't be less than 0!");
+        }
+        this.interestRate = interestRate;
+        this.minTerm = minTerm;
+        this.maxTerm = maxTerm;
+    }
 
     public String getName() {
         return name;
