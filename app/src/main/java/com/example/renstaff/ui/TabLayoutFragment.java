@@ -15,7 +15,6 @@ import com.example.renstaff.databinding.TabLayoutFragmentBinding;
 import com.example.renstaff.FragmentAdapter;
 import com.example.renstaff.R;
 import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
 public class TabLayoutFragment extends Fragment {
 

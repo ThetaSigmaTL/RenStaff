@@ -37,7 +37,6 @@ public class BankProductsParser implements JsonParser{
                 productList.add(creditProduct);
             }
             bankProductsRoot.setProductList(productList);
-
         }
         catch (Exception e){
             e.printStackTrace();

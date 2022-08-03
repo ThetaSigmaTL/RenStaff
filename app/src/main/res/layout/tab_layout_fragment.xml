@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/tab_backplate"
             app:tabMode="scrollable"
-            app:tabSelectedTextColor="@color/teal_200">
+            app:tabSelectedTextColor="@color/ruby">
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager.widget.ViewPager

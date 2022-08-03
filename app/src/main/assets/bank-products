@@ -23,6 +23,18 @@
       "minTerm": 13,
       "maxTerm": 36,
       "rate": 22
+    },
+    {
+      "name": "Рассрочка",
+      "minTerm": 12,
+      "maxTerm": 12,
+      "rate": 8
+    },
+    {
+      "name": "Рассрочка",
+      "minTerm": 24,
+      "maxTerm": 24,
+      "rate": 10
     }
   ]
 }
