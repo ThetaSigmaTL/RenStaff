@@ -5,17 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainColor"
+
     tools:context=".ui.TabLayoutFragment">
 
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/mainColor"
         tools:context=".MainActivity">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:background="@drawable/tab_backplate"
             app:tabMode="scrollable"
