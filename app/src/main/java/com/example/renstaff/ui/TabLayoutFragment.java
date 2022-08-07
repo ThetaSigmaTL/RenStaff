@@ -9,9 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.renstaff.databinding.TabLayoutFragmentBinding;
 import com.example.renstaff.FragmentAdapter;
 import com.example.renstaff.R;
 import com.google.android.material.tabs.TabLayout;
