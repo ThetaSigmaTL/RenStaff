@@ -2,29 +2,25 @@ package com.example.renstaff;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class Credit {
     private BigDecimal creditSum;
+    private int earned;
     private Date date;
     private String name;
+    private String contractNumber;
     private CreditType creditType;
-    private boolean insurance;
-    private boolean sms;
-    private boolean lawyer;
-    private boolean dateChanger;
-    private boolean creditHistory;
+    List <BankService> bankServicesList;
 
-    public Credit(BigDecimal creditSum, Date date, String name, CreditType creditType, boolean insurance, boolean sms,
-                  boolean lawyer, boolean dateChanger, boolean creditHistory){
+    public Credit(BigDecimal creditSum, int earned, Date date, String name, String contractNumber, CreditType creditType, List<BankService> bankServicesList){
         this.creditSum = creditSum;
+        this.earned = earned;
         this.date = date;
         this.name = name;
+        this.contractNumber = contractNumber;
         this.creditType = creditType;
-        this.insurance = insurance;
-        this.sms = sms;
-        this.lawyer = lawyer;
-        this.dateChanger = dateChanger;
-        this.creditHistory = creditHistory;
+        this.bankServicesList = bankServicesList;
     }
 
     public BigDecimal getCreditSum() {
@@ -59,43 +55,19 @@ public class Credit {
         this.creditType = creditType;
     }
 
-    public boolean isInsurance() {
-        return insurance;
+    public String getContractNumber() {
+        return contractNumber;
     }
 
-    public void setInsurance(boolean insurance) {
-        this.insurance = insurance;
+    public void setContractNumber(String contractNumber) {
+        this.contractNumber = contractNumber;
     }
 
-    public boolean isSms() {
-        return sms;
+    public int getEarned() {
+        return earned;
     }
 
-    public void setSms(boolean sms) {
-        this.sms = sms;
-    }
-
-    public boolean isLawyer() {
-        return lawyer;
-    }
-
-    public void setLawyer(boolean lawyer) {
-        this.lawyer = lawyer;
-    }
-
-    public boolean isDateChanger() {
-        return dateChanger;
-    }
-
-    public void setDateChanger(boolean dateChanger) {
-        this.dateChanger = dateChanger;
-    }
-
-    public boolean isCreditHistory() {
-        return creditHistory;
-    }
-
-    public void setCreditHistory(boolean creditHistory) {
-        this.creditHistory = creditHistory;
+    public void setEarned(int earned) {
+        this.earned = earned;
     }
 }

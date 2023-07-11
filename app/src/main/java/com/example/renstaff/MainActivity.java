@@ -21,6 +21,7 @@ public class MainActivity extends BaseActivity {
         setContentView(activityMainBinding.getRoot());
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.toolbar);
+        getSupportActionBar().setElevation(0);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each

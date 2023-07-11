@@ -31,7 +31,7 @@ public class TabLayoutFragment extends Fragment {
         tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
 
         viewPager = (ViewPager) view.findViewById(R.id.pager);
-        fragmentAdapter = new FragmentAdapter(getFragmentManager());
+        fragmentAdapter = new FragmentAdapter(getChildFragmentManager());
 
 
         viewPager.setAdapter(fragmentAdapter);

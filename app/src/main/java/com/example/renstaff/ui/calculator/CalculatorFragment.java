@@ -37,7 +37,7 @@ public class CalculatorFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         EditText editTextLoanTerm = view.findViewById(R.id.edit_text_loan_term);
-        EditText editTextCosts = view.findViewById((R.id.edit_text_costs));
+        EditText editTextCosts = view.findViewById((R.id.edit_text_loan_sum));
 
         editTextCosts.setFilters(new InputFilter[]{new MinMaxInputFilter("1","1000000")});
         editTextLoanTerm.setFilters(new InputFilter[]{new MinMaxInputFilter("1","36")});

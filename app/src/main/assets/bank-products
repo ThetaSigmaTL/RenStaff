@@ -4,25 +4,25 @@
       "name": "Выгодный",
       "minTerm": 6,
       "maxTerm": 12,
-      "rate": 22
+      "rate": 25.8
     },
     {
       "name": "Сочный",
       "minTerm": 6,
       "maxTerm": 12,
-      "rate": 22
+      "rate": 25.8
     },
     {
       "name": "Выгодный",
       "minTerm": 13,
       "maxTerm": 36,
-      "rate": 18
+      "rate": 20.9
     },
     {
       "name": "Сочный",
       "minTerm": 13,
       "maxTerm": 36,
-      "rate": 22
+      "rate": 20.9
     },
     {
       "name": "Рассрочка",

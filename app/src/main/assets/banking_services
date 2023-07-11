@@ -1,17 +1,40 @@
 {
   "servicesIl": [
     {
-      "stepOneInsurance": 1.25,
-      "stepTwoInsurance": 1.2,
-      "stepThreeInsurance": 0.85,
-
-      "stepOneSMS": 1299,
-      "stepTwoSMS": 1449,
-      "stepThreeSMS": 1599,
-
-      "lawyer": 1500,
-      "dateChanger": 1150,
-      "creditStory": 900
+      "name": "Финансовая защита 1",
+      "rate": 1.25
+    },
+    {
+      "name": "Финансовая защита 2",
+      "rate": 1.2
+    },
+    {
+      "name": "Финансовая защита 3",
+      "rate": 0.85
+    },
+    {
+      "name": "Смс 1",
+      "price": 1499
+    },
+    {
+      "name": "Смс 2",
+      "price": 1649
+    },
+    {
+      "name": "Смс 3",
+      "price": 1799
+    },
+    {
+      "name": "Личный адвокат",
+      "price": 1500
+    },
+    {
+      "name": "Гибкий график",
+      "price": 1150
+    },
+    {
+      "name": "Идеальный заемщик",
+      "price": 900
     }
   ]
 }

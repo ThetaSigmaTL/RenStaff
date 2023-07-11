@@ -1,3 +1,5 @@
+package com.example.renstaff;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -24,7 +26,6 @@ public class BankProductsParser implements JsonParser{
         try (FileReader reader = new FileReader(filename)) {
             JSONObject rootJsonObject = (JSONObject) jsonParser.parse(reader);
             // String name = (String) rootJsonObject.get(TAG_NAME);
-
             List<CreditProduct> productList = new ArrayList<>();
             JSONArray interestRates = (JSONArray) rootJsonObject.get(TAG_RATES_ARRAY);
             for (Object item : interestRates) {

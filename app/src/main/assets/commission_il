@@ -1,0 +1,68 @@
+{
+  "awardIl": [
+    {
+      "name": "Группа 1",
+      "minRate": 7,
+      "maxRate": 9.99,
+      "bonus": 115,
+      "insurance": 520,
+      "optima": 190
+    },
+    {
+      "name": "Группа 2",
+      "minRate": 10,
+      "maxRate": 14.99,
+      "bonus": 260,
+      "insurance": 580,
+      "optima": 215
+    },
+    {
+      "name": "Группа 3",
+      "minRate": 15,
+      "maxRate": 17.99,
+      "bonus": 360,
+      "insurance": 740,
+      "optima": 280
+    },
+    {
+      "name": "Группа 4",
+      "minRate": 18,
+      "maxRate": 21.99,
+      "bonus": 570,
+      "insurance": 740,
+      "optima": 280
+    },
+    {
+      "name": "Группа 5",
+      "minRate": 22,
+      "maxRate": 29.99,
+      "bonus": 780,
+      "insurance": 740,
+      "optima": 280
+    },
+    {
+      "name": "Группа 6",
+      "minRate": 30,
+      "maxRate": 34.99,
+      "bonus": 1000,
+      "insurance": 780,
+      "optima": 290
+    },
+    {
+      "name": "Группа 7",
+      "minRate": 35,
+      "maxRate": 39.99,
+      "bonus": 1160,
+      "insurance": 840,
+      "optima": 300
+    },
+    {
+      "name": "Группа 8",
+      "minRate": 40,
+      "maxRate": 100,
+      "bonus": 1350,
+      "insurance": 900,
+      "optima": 330
+    }
+  ]
+}

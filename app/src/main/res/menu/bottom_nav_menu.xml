@@ -5,18 +5,18 @@
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:enabled="true"
-        android:title="@string/title_home" />
+        android:iconTint="@color/ruby" />
 
     <item
         android:id="@+id/navigation_chat"
         android:enabled="true"
+        android:iconTint="@color/ruby"
         android:icon="@drawable/ic_baseline_chat_24"
-        android:title="@string/title_chat" />
+        />
 
     <item
         android:id="@+id/navigation_settings"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_settings_24"
-        android:title="@string/title_Settings" />
-
+        android:iconTint="@color/ruby"
+        android:icon="@drawable/ic_baseline_settings_24" />
 </menu>

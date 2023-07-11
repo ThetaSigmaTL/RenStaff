@@ -1,5 +1,5 @@
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+package com.example.renstaff;
+
 import java.util.List;
 
 public class BankProductsRoot implements Root {

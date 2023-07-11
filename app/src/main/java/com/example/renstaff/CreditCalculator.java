@@ -20,14 +20,12 @@ public class CreditCalculator {
 
     private HashMap <String, Double> creditOptions = null;
 
-
     public Credit calculateCredit (int term, BigDecimal goodsSum, boolean insurance, boolean sms,
                                    boolean lawyer, boolean dateChanger, boolean creditHistory){
         BigDecimal creditSum;
         BigDecimal servicesSum;
         return null;
     }
-
     private HashMap<String, Double> readBankProductsJson()
     {
         try {

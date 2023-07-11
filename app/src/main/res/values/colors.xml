@@ -4,6 +4,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FBFBFB</color>
     <color name="ruby">#D51668</color>
+    <color name="goldy">#E6DB82</color>
     <color name="RenGreen">#0DA88A</color>
     <color name="tiles_1">#f5f5f5</color>
     <color name="RenGreenButton">#98bb69</color>
@@ -14,4 +15,14 @@
     <color name="greyed_blue">#EAECF5</color>
     <color name="settings_color">#F7DAA8</color>
     <color name="grey">#A0A2AD</color>
+    <color name="circle_color_1">#DAD4BA</color>
+    <color name="circle_color_2">#C8DAE6</color>
+    <color name="circle_color_3">#F7C8C8</color>
+    <color name="circle_color_4">#F7DAA8</color>
+    <color name="circle_color_5">#DE7053</color>
+    <color name="circle_color_6">#B4D0C1</color>
+    <color name="light_brown">#E2DECD</color>
+    <color name="transparent_green">#50B4D0C1</color>
+    <color name="opacity_white">#CCFBFBFB</color>
+    <color name="full_transparent">#ffFBFBFB</color>
 </resources>
